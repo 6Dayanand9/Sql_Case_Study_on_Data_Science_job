@@ -150,6 +150,7 @@ select company_location,job_title,avg(salary_in_usd) as average from salaries gr
 different company Locations. Your goal is to Pinpoint Locations WHERE the average salary Has consistently Increased over 
 the Past few years (Countries WHERE data is available for 3 years Only(present year and past two years) providing Insights
  into Locations experiencing Sustained salary growth.
+```
 with k as
 (
 	select * from salaries where company_location in
@@ -173,45 +174,6 @@ SELECT company_locatiON, work_year, AVG(salary_IN_usd) AS average FROM  k GROUP 
 )q GROUP BY company_locatiON  havINg AVG_salary_2024 > AVG_salary_2023 AND AVG_salary_2023 > AVG_salary_2022;
 
 select company_location,avg(salary_in_usd) as average ,work_year  from k group by company_location,work_year order by company_location;
-
-with k as (
-    select *
-    from salaries
-    where company_location in (
-        select company_location
-        from (
-            select company_location,
-                   avg(salary_in_usd),
-                   count(distinct work_year) as yearcount
-            from salaries
-            where work_year >= year(current_date()) - 2
-            group by company_location
-            having yearcount = 3
-        ) a
-    )
-)
-SELECT
-    company_location,
-    MAX(CASE WHEN work_year = 2022 THEN average END) AS AVG_salary_2022,
-    MAX(CASE WHEN work_year = 2023 THEN average END) AS AVG_salary_2023,
-    MAX(CASE WHEN work_year = 2024 THEN average END) AS AVG_salary_2024
-FROM (
-    SELECT company_location,
-           work_year,
-           AVG(salary_in_usd) AS average
-    FROM k
-    GROUP BY company_location, work_year
-) q
-GROUP BY company_location
-HAVING AVG_salary_2024 > AVG_salary_2023
-   AND AVG_salary_2023 > AVG_salary_2022;
-
-select company_location,
-       avg(salary_in_usd) as average,
-       work_year
-from k
-group by company_location, work_year
-order by company_location;
-
+```
 
 ![Screenshot (48)](https://github.com/user-attachments/assets/846efe33-0620-4f55-8452-bf7982714ef4)
