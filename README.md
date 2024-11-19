@@ -96,3 +96,17 @@ group by company_location order by large_company_per_country desc limit 5;
 
 ![Screenshot (43)](https://github.com/user-attachments/assets/07c8369c-7918-4904-873a-f2bc48667b60)
 
+3. Picture yourself AS a data scientist Working for a workforce management platform. 
+Your objective is to calculate the percentage of employees. 
+Who enjoy fully remote roles WITH salaries Exceeding $100,000 USD, Shedding light ON the attractiveness of high-paying 
+remote positions IN today's job market.
+
+set @total_count= (select count(*) from salaries where salary_in_usd>100000);
+set @Remotecount= (select count(*)from salaries where salary_in_usd>100000 and remote_ratio=100);
+set @percentage = round(((@Remotecount)/(@total_count))*100,2);
+
+select @percentage 'percentage of people working remotely and having salary>100000$';
+
+![Screenshot (44)](https://github.com/user-attachments/assets/b49140c0-41ab-49f0-9fbc-61b22594d48e)
+
+
