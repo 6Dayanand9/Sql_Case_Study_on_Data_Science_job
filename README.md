@@ -29,7 +29,7 @@ This project is a comprehensive **Data Science Job Market Case Study** aimed at 
 
 9. **Market Insights for Senior Roles**:  
    Identifying countries with the highest and lowest average salaries for senior-level employees, helping businesses make competitive offers to attract top talent.
-### ====================================================================================================================================================================
+### ======================================================================================================================================
 ### **Features**
 
 1. **Salary Trends**:  
