@@ -84,3 +84,14 @@ for the title 'managers’ Paying salaries Exceeding $90,000 USD
 - select count(*) from salaries where salary_in_usd>90000 and job_title like "%Manager%" and remote_ratio=100;
 
 ![query1](https://github.com/user-attachments/assets/338b6856-e5a0-4f7a-891b-1e456443fc33)
+
+2.AS a remote work advocate Working for a progressive HR tech startup who place their 
+freshers’ clients IN large tech firms. you're tasked WITH Identifying top 5 Country Having 
+greatest count of large (company size) number of companies.
+
+
+select company_location,count(*) as large_company_per_country 
+from salaries where company_size = "L" and experience_level="EN"
+group by company_location order by large_company_per_country desc limit 5;
+![Screenshot (43)](https://github.com/user-attachments/assets/07c8369c-7918-4904-873a-f2bc48667b60)
+
