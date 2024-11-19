@@ -78,6 +78,9 @@ CSV File: Ensure the CSV file (e.g., salaries.csv) is present and accessible i h
 **Queries And There Output**
  1. You're a Compensation analyst employed by a multinational corporation.
  Your Assignment is to Pinpoint Countries who give work fully remotely, 
-for the title 'managers’ Paying salaries Exceeding $90,000 USD 
+for the title 'managers’ Paying salaries Exceeding $90,000 USD
+
+- select * from salaries where salary_in_usd>90000 and job_title like "%Manager%" and remote_ratio=100;
+- select count(*) from salaries where salary_in_usd>90000 and job_title like "%Manager%" and remote_ratio=100;
 
 ![query1](https://github.com/user-attachments/assets/338b6856-e5a0-4f7a-891b-1e456443fc33)
