@@ -29,8 +29,40 @@ This project is a comprehensive **Data Science Job Market Case Study** aimed at 
 
 9. **Market Insights for Senior Roles**:  
    Identifying countries with the highest and lowest average salaries for senior-level employees, helping businesses make competitive offers to attract top talent.
+### ====================================================================================================================================================================
+### **Features**
 
-10. **Advanced Data Processing**:  
+1. **Salary Trends**:  
+   Analyze salary growth patterns by job title, experience level, and company location over multiple years.
+
+2. **Remote Work Analysis**:  
+   Identify high-paying remote jobs, adoption trends, and percentage of employees working fully remotely.
+
+3. **Workforce Distribution**:  
+   Study employee distribution across company sizes and locations, focusing on large companies and freshers.
+
+4. **Job Role Comparisons**:  
+   Compare salaries across job titles and find the highest-paying countries for each role.
+
+5. **Employment Type Analysis**:  
+   Calculate the percentage of full-time, part-time, freelance, and contract roles for each job title.
+
+6. **Entry-Level Insights**:  
+   Highlight countries offering above-average salaries for entry-level positions.
+
+7. **Senior-Level Insights**:  
+   Determine locations with the highest and lowest average salaries for senior roles.
+
+8. **Dynamic Adjustments**:  
+   Simulate salary updates based on market trends and implement remote work policies.
+
+9. **Emerging Talent Markets**:  
+   Identify countries experiencing significant salary growth for early-career professionals.  
+
+10. **Work Year Analysis**:  
+    Investigate trends in workforce dynamics and salaries across specific years.
+
+11. **Advanced Data Processing**:  
     Utilizing SQL techniques like window functions, CTEs (Common Table Expressions), and aggregations to extract meaningful insights and showcase a variety of skills applicable in real-world data analysis.
 
 This case study is designed as a portfolio project for data scientists, data analysts, and SQL enthusiasts to showcase expertise in database management, workforce analytics, and salary trend analysis. It demonstrates the use of SQL to address complex business problems and make data-driven decisions.
