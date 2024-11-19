@@ -150,6 +150,7 @@ select company_location,job_title,avg(salary_in_usd) as average from salaries gr
 different company Locations. Your goal is to Pinpoint Locations WHERE the average salary Has consistently Increased over 
 the Past few years (Countries WHERE data is available for 3 years Only(present year and past two years) providing Insights
  into Locations experiencing Sustained salary growth.
+
 with k as
 (
 	select * from salaries where company_location in
