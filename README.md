@@ -130,3 +130,49 @@ on t.job_title= k.job_title where average_per_country>average_sal order by avera
 
 ![Screenshot (46)](https://github.com/user-attachments/assets/88382e24-774b-4778-9dc1-bcefcb6e112b)
 
+
+
+5. You've been hired by a big HR Consultancy to look at how much people get paid IN different Countries. 
+Your job is to Find out for each job title which  Country pays the maximum average salary. 
+This helps you to place your candidates IN those countries.
+
+select * from 
+( 
+select *,dense_rank() over(partition by job_title order by average desc) as rankbyja from
+(
+select company_location,job_title,avg(salary_in_usd) as average from salaries group by job_title,company_location
+)t
+)k where rankbyja=1;
+
+![Screenshot (47)](https://github.com/user-attachments/assets/a97ecdbf-0434-4c2b-a2b3-6c96ff5e7a5b)
+
+6. AS a data-driven Business consultant, you've been hired by a multinational corporation to analyze salary trends across 
+different company Locations. Your goal is to Pinpoint Locations WHERE the average salary Has consistently Increased over 
+the Past few years (Countries WHERE data is available for 3 years Only(present year and past two years) providing Insights
+ into Locations experiencing Sustained salary growth.
+with k as
+(
+	select * from salaries where company_location in
+(
+	select company_location from
+(
+	select company_location,avg(salary_in_usd),count(distinct work_year) as yearcount from salaries 
+	where work_year>=year(current_date())-2
+	group by company_location having yearcount=3
+)a
+)
+)
+SELECT 
+    company_locatiON,
+    MAX(CASE WHEN work_year = 2022 THEN  average END) AS AVG_salary_2022,
+    MAX(CASE WHEN work_year = 2023 THEN average END) AS AVG_salary_2023,
+    MAX(CASE WHEN work_year = 2024 THEN average END) AS AVG_salary_2024
+FROM 
+(
+SELECT company_locatiON, work_year, AVG(salary_IN_usd) AS average FROM  k GROUP BY company_locatiON, work_year 
+)q GROUP BY company_locatiON  havINg AVG_salary_2024 > AVG_salary_2023 AND AVG_salary_2023 > AVG_salary_2022;
+
+select company_location,avg(salary_in_usd) as average ,work_year  from k group by company_location,work_year order by company_location;
+
+
+![Screenshot (48)](https://github.com/user-attachments/assets/846efe33-0620-4f55-8452-bf7982714ef4)
