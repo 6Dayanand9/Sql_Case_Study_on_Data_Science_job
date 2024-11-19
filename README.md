@@ -110,3 +110,23 @@ select @percentage 'percentage of people working remotely and having salary>1000
 ![Screenshot (44)](https://github.com/user-attachments/assets/b49140c0-41ab-49f0-9fbc-61b22594d48e)
 
 
+4.	Imagine you're a data analyst Working for a global recruitment agency. 
+Your Task is to identify the Locations where entry-level average salaries exceed the 
+average salary for that job title in market for entry level, helping your agency guide candidates towards lucrative countries.
+
+
+select t.job_title,k.company_location,t.average_sal,k.average_per_country from 
+(
+select job_title,avg(salary_in_usd) as average_sal from 
+salaries where experience_level="EN" group by job_title
+) AS t 
+inner join
+(
+select job_title,company_location,avg(salary_in_usd) as average_per_country from salaries
+where  experience_level="EN" group by job_title,company_location
+)as k 
+on t.job_title= k.job_title where average_per_country>average_sal order by average_per_country desc;
+
+
+![Screenshot (46)](https://github.com/user-attachments/assets/88382e24-774b-4778-9dc1-bcefcb6e112b)
+
