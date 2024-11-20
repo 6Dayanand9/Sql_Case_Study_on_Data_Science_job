@@ -29,7 +29,7 @@ This project is a comprehensive **Data Science Job Market Case Study** aimed at 
 
 9. **Market Insights for Senior Roles**:  
    Identifying countries with the highest and lowest average salaries for senior-level employees, helping businesses make competitive offers to attract top talent.
-### =================================================================================================
+=================================================================================================
 ### **Features**
 
 1. **Salary Trends**:  
@@ -67,15 +67,15 @@ This project is a comprehensive **Data Science Job Market Case Study** aimed at 
 
 This case study is designed as a portfolio project for data scientists, data analysts, and SQL enthusiasts to showcase expertise in database management, workforce analytics, and salary trend analysis. It demonstrates the use of SQL to address complex business problems and make data-driven decisions.
 
-### =================================================================================================
-Setup Instructions (CSV-Based with MySQL)
+=================================================================================================
+### Setup Instructions (CSV-Based with MySQL)
 1. Prerequisites
 MySQL Installed: Ensure you have MySQL installed on your system.
 SQL Client: Install tools like MySQL Workbench  to run SQL queries.
 CSV File: Ensure the CSV file (e.g., salaries.csv) is present and accessible i have uploaded it.
-### =================================================================================================
+=================================================================================================
 
-**Queries And There Output**
+### **Queries And There Output**
  1. You're a Compensation analyst employed by a multinational corporation.
  Your Assignment is to Pinpoint Countries who give work fully remotely, 
 for the title 'managers’ Paying salaries Exceeding $90,000 USD
